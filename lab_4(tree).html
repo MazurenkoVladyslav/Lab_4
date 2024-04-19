@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генеалогічне дерево</title>
+</head>
+<body>
+    <img id="familyTree" src="f_tree.png" usemap="#image_map" alt="Генеалогічне дерево">
+    <map name="image_map">
+        <area alt="Я" title="Я" onclick="showPhoto('Я.jpg')" coords="335,61,388,92" shape="rect">
+        <area alt="Мама" title="Мама" onclick="showPhoto('Мама.jpg')" coords="463,129,540,167" shape="rect">
+        <area alt="Тато" title="Тато" onclick="showPhoto('Тато.jpg')" coords="195,130,263,164" shape="rect">
+        <area alt="Бабуся" title="Бабуся" onclick="showPhoto('Бабуся.jpg')" coords="540,213,631,245" shape="rect">
+        <area alt="Дідусь" title="Дідусь" onclick="showPhoto('Дідусь.jpg')" coords="400,214,490,242" shape="rect">
+        <area alt="Бабуся" title="Бабуся" onclick="showPhoto('Тато.jpg')" coords="252,214,340,245" shape="rect">
+        <area alt="Дідусь" title="Дідусь" onclick="showPhoto('Дід.jpg')" coords="85,212,174,250" shape="rect">
+    </map>
+
+    <div id="photoViewer" style="display: none;">
+        <img id="photo" src="" alt="Фотографія">
+        <button onclick="goBack()">Назад</button>
+    </div>
+
+    <script>
+        function showPhoto(photoURL) {
+            document.getElementById('familyTree').style.display = 'none';
+            document.getElementById('photoViewer').style.display = 'block';
+            document.getElementById('photo').src = photoURL;
+        }
+
+        function goBack() {
+            document.getElementById('familyTree').style.display = 'block';
+            document.getElementById('photoViewer').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
